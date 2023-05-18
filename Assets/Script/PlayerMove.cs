@@ -34,29 +34,30 @@ public class PlayerMove : MonoBehaviour
     {
         // 방이동을 위한 Teleport
         if(other.CompareTag("TPT"))
-            {
-                Vector3 TPposition = this.transform.position;
-                this.transform.position = new Vector3(TPposition.x, TPposition.y + 5f, TPposition.z);
-                Debug.Log("Move : Top");
-            }
-            else if(other.CompareTag("TPB"))
-            {
-                Vector3 TPposition = this.transform.position;
-                this.transform.position = new Vector3(TPposition.x, TPposition.y - 5f, TPposition.z);
-                Debug.Log("Move : Bottom"); 
-            }
-            else if(other.CompareTag("TPL"))
-            {
-                Vector3 TPposition = this.transform.position;
-                this.transform.position = new Vector3(TPposition.x - 5f, TPposition.y, TPposition.z);
-                Debug.Log("Move : Left"); 
-            }
-            else if(other.CompareTag("TPR"))
-            {
-                Vector3 TPposition = this.transform.position;
-                this.transform.position = new Vector3(TPposition.x + 5f, TPposition.y, TPposition.z);
-                Debug.Log("Move : Right"); 
-            }
+        {
+            Vector3 TPposition = this.transform.position;
+            this.transform.position = new Vector3(TPposition.x, TPposition.y + 5.5f, TPposition.z);
+            Debug.Log("Move : Top");
+        }
+        else if(other.CompareTag("TPB"))
+        {
+            Vector3 TPposition = this.transform.position;
+            this.transform.position = new Vector3(TPposition.x, TPposition.y - 5.5f, TPposition.z);
+            Debug.Log("Move : Bottom"); 
+        }
+        else if(other.CompareTag("TPL"))
+        {
+            Vector3 TPposition = this.transform.position;
+            this.transform.position = new Vector3(TPposition.x - 5.5f, TPposition.y, TPposition.z);
+            Debug.Log("Move : Left"); 
+        }
+        else if(other.CompareTag("TPR"))
+        {
+            Vector3 TPposition = this.transform.position;
+            this.transform.position = new Vector3(TPposition.x + 5.5f, TPposition.y, TPposition.z);
+            Debug.Log("Move : Right"); 
+        }
+            
     }
 
 }

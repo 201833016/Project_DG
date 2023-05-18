@@ -10,6 +10,8 @@ public class MonsterCount : MonoBehaviour
     [Header("포탈 ")]
     public GameObject mapPotal;
 
+    public GameObject monster;
+
     void Start()
     {
        // 시작시 오브젝트 비활성화 

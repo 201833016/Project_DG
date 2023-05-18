@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject menuSet;  // ESC 서브 메뉴 여는 키
 
+
     void Awake() 
     {
         menuSet.SetActive(false);  
@@ -20,11 +21,13 @@ public class GameManager : MonoBehaviour
             {
                 // 서브 메뉴가 켜져있으면
                 menuSet.SetActive(false);
+                Time.timeScale = 1f;    // 일시정지 해제
             }
             else
             {
                 // 서브 메뉴가 없었으면 
                 menuSet.SetActive(true);
+                Time.timeScale = 0; // 일시정지
             }
         }
     }
