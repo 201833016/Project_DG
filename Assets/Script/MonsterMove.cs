@@ -57,6 +57,7 @@ public class MonsterMove : MonoBehaviour
 
     public void TakeDamaged(int damage)
     {
+        // 몬스터가 공격을 받을 시
         HP = HP - damage;
     }
 }
