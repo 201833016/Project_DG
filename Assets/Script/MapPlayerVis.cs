@@ -12,14 +12,21 @@ public class MapPlayerVis : MonoBehaviour
         Monster.SetActive(false);   // 몬스터 비가시화
     }
 
+
     private void OnTriggerStay2D(Collider2D other) 
     {
         if(other.CompareTag("Player"))
         {
             // 플레이어가 해당 Room에 들어 왔을경우, 몬스터 가시화
-            Monster.SetActive(true);
-            PlayerIn = true;
+            MonsterAppear();
         }
+    }
+
+    void MonsterAppear()
+    {
+        // 몬스터 가시화
+        Monster.SetActive(true);
+        PlayerIn = true;
     }
 
     private void OnTriggerExit2D(Collider2D other) 

@@ -5,9 +5,28 @@ using UnityEngine.UI;
 public class Fade : MonoBehaviour
 {
     [Header("맵 넘어갈 이미지")] public Image Panel;
-    float time = 0f;
-    float FadeTime = 1f;
+    private float time = 0f;
+    private float FadeTime = 0.8f;
 
+    /*
+    Button btn;
+
+    void Start() 
+    {
+        btn.GetComponent<Button>();
+        if(Input.GetKey(KeyCode.L))
+        {
+            Debug.Log("눌림");
+            //btn.onClick.AddListener(FadeMotion);
+        }  
+    }
+
+    void Update() 
+    {
+          
+    }
+    */
+    
     public void FadeMotion()
     {
         StartCoroutine(FadeFlow());

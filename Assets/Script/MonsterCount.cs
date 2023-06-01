@@ -10,13 +10,13 @@ public class MonsterCount : MonoBehaviour
     [Header("포탈 ")]
     public GameObject mapPotal;
 
-    public GameObject monster;
+    //public GameObject monster;
 
     void Start()
     {
        // 시작시 오브젝트 비활성화 
-       // itemBox.SetActive(false);
-       // mapPotal.SetActive(false);
+       itemBox.SetActive(false);
+       mapPotal.SetActive(false);
     }
 
     private void Update() 
@@ -25,7 +25,7 @@ public class MonsterCount : MonoBehaviour
         {
             itemBox.SetActive(true);    // 아이템 상자 활성화
             mapPotal.SetActive(true);  // 이동 포탈 활성화
-        }
+        }        
     }
 
 }

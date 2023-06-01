@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     private Vector2 speedVec;
 
     [Header("맵 넘어갈 이미지")] public Image Panel;
+    [Header("맵 이동 좌표")] public GameObject mapSpr;  // 카메라 lerp용 실험
+
     float time = 0f;
     float FadeTime = 1f;
     void Update()
@@ -34,6 +36,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         GetComponent<Rigidbody2D>().velocity = speedVec;
+        
     }
 
 
@@ -42,41 +45,47 @@ public class PlayerMove : MonoBehaviour
         // 방 이동을 위한 Teleport
         if(other.CompareTag("TPT"))
         {
-            StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
+            //StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
 
             Vector3 TPposition = this.transform.position;
             this.transform.position = new Vector3(TPposition.x, TPposition.y + 5.5f, TPposition.z);
             Debug.Log("Move : Top");
+
+            mapSpr.GetComponent<Move>().TopMap();
         }
         else if(other.CompareTag("TPB"))
         {
-            StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
-
+            //StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
 
             Vector3 TPposition = this.transform.position;
             this.transform.position = new Vector3(TPposition.x, TPposition.y - 5.5f, TPposition.z);
             Debug.Log("Move : Bottom"); 
 
+            mapSpr.GetComponent<Move>().BottomMap();
         }
         else if(other.CompareTag("TPL"))
         {
-            StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
-
+            //StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
             Vector3 TPposition = this.transform.position;
             this.transform.position = new Vector3(TPposition.x - 5.5f, TPposition.y, TPposition.z);
             Debug.Log("Move : Left"); 
+            mapSpr.GetComponent<Move>().LeftMap();
+
+            
         }
         else if(other.CompareTag("TPR"))
         {
-            StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
+            //StartCoroutine(FadeFlow()); // 페이드 인아웃 화면 전환
 
             Vector3 TPposition = this.transform.position;
             this.transform.position = new Vector3(TPposition.x + 5.5f, TPposition.y, TPposition.z);
             Debug.Log("Move : Right"); 
+
+            mapSpr.GetComponent<Move>().RightMap();
         }
     }
 
-    
+/*
     IEnumerator FadeFlow()
     {
         Panel.gameObject.SetActive(true);
@@ -92,8 +101,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         time = 0f;
-        //yield return new WaitForSeconds(1.2f); // 1.2초의 대기시간.
-
+        yield return new WaitForSeconds(1f); // 1초의 대기시간.
         while(alpha.a > 0f)
         {
             // 이미지의 알파 값이 0이상일 동안, 화면이 완전히 밝아질 동안
@@ -104,8 +112,7 @@ public class PlayerMove : MonoBehaviour
 
         }
         Panel.gameObject.SetActive(false);
-        yield return null;
-        
+        yield return null;   
     }
-    
+*/
 }
