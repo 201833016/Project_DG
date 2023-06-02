@@ -12,11 +12,19 @@ public class MonsterCount : MonoBehaviour
 
     //public GameObject monster;
 
-    void Start()
+    //private MapPlayerVis playerVis;
+
+    void Awake()
     {
-       // 시작시 오브젝트 비활성화 
-       itemBox.SetActive(false);
-       mapPotal.SetActive(false);
+        // 시작시 오브젝트 비활성화 
+        itemBox.SetActive(false);
+        mapPotal.SetActive(false);
+        /*
+        if(playerVis.PlayerIn)
+        {
+            
+        }
+        */
     }
 
     private void Update() 

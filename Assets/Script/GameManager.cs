@@ -6,10 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public GameObject menuSet;  // ESC 서브 메뉴 여는 키
 
-
-    void Awake() 
+    void Start() 
     {
-        menuSet.SetActive(false);  
+        menuSet.SetActive(false); 
     }
 
     void Update()

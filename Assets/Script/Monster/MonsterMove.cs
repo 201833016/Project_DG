@@ -13,8 +13,7 @@ public class MonsterMove : MonoBehaviour
     [Header("근접 거리")]
     [SerializeField] [Range(0f, 3f)] float playerDistance = 1f;    // 인지거리
 
-    public int HP = 3;
-
+    public float HP = 3f;
     private bool follow = false;
 
     private void Start() 
@@ -26,11 +25,6 @@ public class MonsterMove : MonoBehaviour
     private void Update() {
         FollowTarget();
         rb.velocity = Vector3.zero; // 플레이어에게 밀림 방지
-
-        if(HP <= 0 )
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     void FollowTarget()
@@ -55,9 +49,20 @@ public class MonsterMove : MonoBehaviour
         follow = false;
     }
 
-    public void TakeDamaged(int damage)
+    public void TakeDamaged(float damage)
     {
         // 몬스터가 공격을 받을 시
-        HP = HP - damage;
+        HP -= damage;
+        if(HP <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        Debug.Log("몬스터 처치");
+        Destroy(this.gameObject);
     }
 }

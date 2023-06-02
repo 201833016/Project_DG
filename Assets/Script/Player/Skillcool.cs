@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class test : MonoBehaviour
+public class Skillcool : MonoBehaviour
 {    
     public Image abilityImage1; // 스킬 이미지
     public float cooldown1 = 5f;

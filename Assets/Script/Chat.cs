@@ -32,10 +32,12 @@ public class Chat : MonoBehaviour
 
             float x = text.preferredWidth;
             x = (x>3)?3:x+0.3f;
+            quad.SetActive(true);
+
             quad.transform.localScale = new Vector2(x, text.preferredHeight + 0.3f);
 
             transform.position = new Vector2(chatPoint.position.x, chatPoint.position.y + text.preferredHeight / 2);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
         }
         Destroy(gameObject);
     }

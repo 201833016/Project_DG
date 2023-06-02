@@ -13,8 +13,8 @@ public class PlayerMove : MonoBehaviour
     [Header("맵 넘어갈 이미지")] public Image Panel;
     [Header("맵 이동 좌표")] public GameObject mapSpr;  // 카메라 lerp용 실험
 
-    float time = 0f;
-    float FadeTime = 1f;
+    //float time = 0f;
+    //float FadeTime = 1f;
     void Update()
     {
         speedVec = Vector2.zero;

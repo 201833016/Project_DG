@@ -25,6 +25,10 @@ public class Bullet : MonoBehaviour
                 // Debug.Log("몬스터 명중");
                 ray.collider.GetComponent<MonsterMove>().TakeDamaged(1);
             }
+            else if(ray.collider.tag == "FarEnemy")
+            {
+                ray.collider.GetComponent<MonsterShooting>().LongTakeDamaged(1);
+            }
             DestroyBullet();
         }
     }

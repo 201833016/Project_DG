@@ -5,13 +5,19 @@ using UnityEngine;
 public class MapPlayerVis : MonoBehaviour
 {
     [Header("몬스터")] public GameObject Monster;
-    public bool PlayerIn;   // 플레이어가 해당 Room에 있는지
+    public bool PlayerIn = false;   // 플레이어가 해당 Room에 있는지
 
     private void Start() 
     {
         Monster.SetActive(false);   // 몬스터 비가시화
     }
 
+    private void Update() {
+        if(PlayerIn)
+        {
+            MonsterAppear();
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D other) 
     {
@@ -29,10 +35,14 @@ public class MapPlayerVis : MonoBehaviour
         PlayerIn = true;
     }
 
-    private void OnTriggerExit2D(Collider2D other) 
+    private void OnTriggerExit2D(PlayerMove player) 
     {
         // 플레이어가 해당 Room에 떠났을경우, 몬스터 비가시화
-        Monster.SetActive(false);
-        PlayerIn = false;
+        if(player.gameObject.CompareTag("Player"))
+        {
+            Monster.SetActive(false);
+            PlayerIn = false;
+        }
+
     }
 }

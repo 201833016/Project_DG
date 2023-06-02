@@ -15,13 +15,14 @@ public class ChatSentence : MonoBehaviour
         go.GetComponent<Chat>().Ondialogue(sentence, chatTr);
     }
 
-    private void Update() 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(Input.GetKey(KeyCode.P))
+        if(other.CompareTag("Player"))
         {
+            Debug.Log("상자 범위 내");
             // 임시적으로 p를 누르면 [Press "E"] 출력
             TalkNpc();
-        }
+        }   
     }
 
     
