@@ -9,11 +9,12 @@ public class MonsterShooting : MonoBehaviour
 
     private float timer;
     private GameObject player;
-
-    public float HP = 3f;
+    public float monsterHP = 3f;
+    private GameManager gameManager;
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Update() 
@@ -39,8 +40,8 @@ public class MonsterShooting : MonoBehaviour
     public void LongTakeDamaged(float damage)
     {
         // 몬스터가 공격을 받을 시
-        HP -= damage;
-        if(HP <= 0)
+        monsterHP -= damage;
+        if(monsterHP <= 0)
         {
             Die();
         }
@@ -51,5 +52,6 @@ public class MonsterShooting : MonoBehaviour
         GetComponent<LootBag>().InstantiateLoot(transform.position);
         Debug.Log("몬스터 처치");
         Destroy(this.gameObject);
+        gameManager.MonsterScore(200);
     }
 }

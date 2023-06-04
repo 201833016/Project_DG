@@ -851,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a847826527d4edb4685c4338ae858245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemBox: {fileID: 0}
+  itemBox: {fileID: 9031969506616683998}
   mapPotal: {fileID: 8634707787277124461}
 --- !u!1 &795083347114255362
 GameObject:

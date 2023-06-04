@@ -9,9 +9,9 @@ public class RoomSpawn : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand;
+    public bool spawned = false;
 
     public bool playerVisible = true;
-    public bool spawned = false;
     public float waitTime = 4f;
 
     void Start() 

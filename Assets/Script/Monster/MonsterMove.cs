@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterMove : MonoBehaviour
 {
+    
     Rigidbody2D rb;
     Transform targetPlayer;
 
@@ -13,13 +14,18 @@ public class MonsterMove : MonoBehaviour
     [Header("근접 거리")]
     [SerializeField] [Range(0f, 3f)] float playerDistance = 1f;    // 인지거리
 
-    public float HP = 3f;
+    public float monsterHP = 3f;
+    public float monsterMaxhp = 3f;
     private bool follow = false;
-
+    GameManager gameManager;
+    
+    
     private void Start() 
     {
         rb = GetComponent<Rigidbody2D>();
-        targetPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();   
+        targetPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        monsterHP = monsterMaxhp;
     }
 
     private void Update() {
@@ -49,20 +55,23 @@ public class MonsterMove : MonoBehaviour
         follow = false;
     }
 
-    public void TakeDamaged(float damage)
+    public void TakeDamaged(float damageAmount)
     {
         // 몬스터가 공격을 받을 시
-        HP -= damage;
-        if(HP <= 0)
+        monsterHP -= damageAmount;
+        if(monsterHP <= 0)
         {
             Die();
         }
     }
 
     private void Die()
-    {
+    {    
         GetComponent<LootBag>().InstantiateLoot(transform.position);
         Debug.Log("몬스터 처치");
-        Destroy(this.gameObject);
+        Destroy(gameObject);
+        gameManager.MonsterScore(100);
     }
+
+    
 }

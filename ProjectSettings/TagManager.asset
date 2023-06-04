@@ -16,6 +16,7 @@ TagManager:
   - TPR
   - Wall
   - FarEnemy
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Boss
   - Wall
   - Monster
   - Player

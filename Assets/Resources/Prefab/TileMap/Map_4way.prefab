@@ -150,7 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   playerDistance: 1
-  HP: 3
+  monsterHP: 3
+  monsterMaxhp: 3
 --- !u!114 &621596881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8702213629177045226, guid: bd855ec18bb188d498d4b2c5b2a0e298, type: 3}
   bulletPos: {fileID: 1283210385}
-  HP: 3
+  monsterHP: 3
 --- !u!1 &381958212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,8 +2458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 2
-  playerVisible: 1
   spawned: 0
+  playerVisible: 1
   waitTime: 4
 --- !u!61 &6449297581614183677
 BoxCollider2D:
@@ -2554,8 +2555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
-  playerVisible: 1
   spawned: 0
+  playerVisible: 1
   waitTime: 4
 --- !u!61 &6449297581699446730
 BoxCollider2D:
@@ -2829,8 +2830,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 1
-  playerVisible: 1
   spawned: 0
+  playerVisible: 1
   waitTime: 4
 --- !u!61 &6449297583501622073
 BoxCollider2D:
@@ -2926,8 +2927,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 4
-  playerVisible: 1
   spawned: 0
+  playerVisible: 1
   waitTime: 4
 --- !u!61 &6449297583526500293
 BoxCollider2D:

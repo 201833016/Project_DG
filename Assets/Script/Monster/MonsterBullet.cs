@@ -38,6 +38,10 @@ public class MonsterBullet : MonoBehaviour
             Debug.Log("피격");
             // PLAYER 피 달기 코드 작성
             Destroy(gameObject);
-        }    
+        }
+        else if(other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }  
     }
 }

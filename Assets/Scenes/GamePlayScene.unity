@@ -613,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -39.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -896,6 +896,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 381958212, guid: 90cbad7cfefd28947bf23b9c74c8520d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 573483433, guid: 90cbad7cfefd28947bf23b9c74c8520d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 643514877, guid: 90cbad7cfefd28947bf23b9c74c8520d, type: 3}
       propertyPath: player
       value: 
@@ -904,6 +912,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 741055333}
+    - target: {fileID: 1182464387, guid: 90cbad7cfefd28947bf23b9c74c8520d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601558538, guid: 90cbad7cfefd28947bf23b9c74c8520d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650304239, guid: 90cbad7cfefd28947bf23b9c74c8520d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128783608, guid: 90cbad7cfefd28947bf23b9c74c8520d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6449297583008686944, guid: 90cbad7cfefd28947bf23b9c74c8520d,
         type: 3}
       propertyPath: m_RootOrder
@@ -922,7 +946,7 @@ PrefabInstance:
     - target: {fileID: 6449297583008686944, guid: 90cbad7cfefd28947bf23b9c74c8520d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 6449297583008686944, guid: 90cbad7cfefd28947bf23b9c74c8520d,
         type: 3}
@@ -2138,7 +2162,7 @@ MonoBehaviour:
     type: 3}
   rooms: []
   waitTime: 2
-  boss: {fileID: 8769376531759103594, guid: 7c335ba013fe25543bc69a29b6cfb3cf, type: 3}
+  boss: {fileID: 8769376531759103594, guid: 7f6792f30e78c4e469da280969b29b18, type: 3}
 --- !u!4 &1624359315
 Transform:
   m_ObjectHideFlags: 0
@@ -2275,6 +2299,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSet: {fileID: 434020002}
+  totalScore: 0
+  playScore: 0
+  stageIndex: 0
+  playerHP: 3
+  playerAtk: 1
+  player: {fileID: 741055337}
 --- !u!1 &2003643332
 GameObject:
   m_ObjectHideFlags: 0

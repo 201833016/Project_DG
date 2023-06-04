@@ -7,9 +7,13 @@ public class MapPlayerVis : MonoBehaviour
     [Header("몬스터")] public GameObject Monster;
     public bool PlayerIn = false;   // 플레이어가 해당 Room에 있는지
 
+    MonsterCount monsterCount;
+
+
     private void Start() 
     {
         Monster.SetActive(false);   // 몬스터 비가시화
+        monsterCount = GameObject.Find("Monster").GetComponent<MonsterCount>();
     }
 
     private void Update() {
@@ -26,9 +30,17 @@ public class MapPlayerVis : MonoBehaviour
             // 플레이어가 해당 Room에 들어 왔을경우, 몬스터 가시화
             MonsterAppear();
         }
+
+        if(other.CompareTag("Boss"))
+        {
+            monsterCount.itemBox.SetActive(false);
+            monsterCount.mapPotal.SetActive(false);
+            Monster.SetActive(false);
+        }
+
     }
 
-    void MonsterAppear()
+    private void MonsterAppear()
     {
         // 몬스터 가시화
         Monster.SetActive(true);

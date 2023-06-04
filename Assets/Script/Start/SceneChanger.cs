@@ -18,6 +18,7 @@ public class SceneChanger : MonoBehaviour
         LoadingControllor.Instance.LoadScene("SampleScene");
     }
 
+
     public void GameOut()
     {
         Application.Quit();
