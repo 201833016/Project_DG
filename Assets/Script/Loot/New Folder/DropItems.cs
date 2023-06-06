@@ -7,6 +7,7 @@ public class DropItems : MonoBehaviour
     public Item item;
     public SpriteRenderer image;
 
+
     public void SetItem(Item _item)
     {
         item.itemName = _item.itemName;
@@ -15,6 +16,8 @@ public class DropItems : MonoBehaviour
 
         image.sprite = item.itemImage;
     }
+
+
 
     public Item GetItem()
     {

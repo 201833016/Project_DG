@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainCameraMove : MonoBehaviour
 {
     
-    [SerializeField] private GameObject player; //square로 변경하기
+    [SerializeField] private GameObject player; //Mappos로 변경하기
     [SerializeField] private float offsetX = 0;
     [SerializeField] private float offsetY = 0;
     [SerializeField] private float offsetZ = -10;

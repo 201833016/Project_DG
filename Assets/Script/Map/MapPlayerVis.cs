@@ -6,6 +6,7 @@ public class MapPlayerVis : MonoBehaviour
 {
     [Header("몬스터")] public GameObject Monster;
     public bool PlayerIn = false;   // 플레이어가 해당 Room에 있는지
+    public bool BossIn = false;
 
     MonsterCount monsterCount;
 
@@ -36,6 +37,7 @@ public class MapPlayerVis : MonoBehaviour
             monsterCount.itemBox.SetActive(false);
             monsterCount.mapPotal.SetActive(false);
             Monster.SetActive(false);
+            
         }
 
     }

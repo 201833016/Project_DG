@@ -47,7 +47,9 @@ public class Inventory : MonoBehaviour
         {
             items.Add(_item);
             if(onchangeItem != null)
-            onchangeItem.Invoke();
+            {
+                onchangeItem.Invoke();
+            }
             return true;
         }
         return false;

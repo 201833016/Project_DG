@@ -10,11 +10,14 @@ public class Boss : MonoBehaviour
     public float bossMaxhp = 5f;
     GameManager gameManager;
 
+    public GameObject symbolPrefab;
+    Vector3 pos;
+
     private void Start() 
     {
         rb = GetComponent<Rigidbody2D>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        
+        pos = this.transform.position;
         bossHP = bossMaxhp;
     }
 
@@ -35,7 +38,8 @@ public class Boss : MonoBehaviour
 
     private void BossDie()
     {
-        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        //GetComponent<LootBag>().InstantiateLoot(transform.position);
+        Instantiate(symbolPrefab, pos, Quaternion.identity); // Symbol을 보스몬스터 위치에 소환    
         Debug.Log("보스 몬스터 처치.");
         Destroy(gameObject);
         gameManager.MonsterScore(1000);

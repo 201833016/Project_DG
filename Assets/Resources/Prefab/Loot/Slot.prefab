@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    itemType: 2
+    itemType: 3
     itemName: 
     itemImage: {fileID: 0}
   itemIcon: {fileID: 5738338124231240059}

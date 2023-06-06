@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     Inventory inven;
@@ -72,9 +74,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameStay()
+    {
+        menuSet.SetActive(false);
+        invenPanel.SetActive(false);
+        Time.timeScale = 1f;    // 일시정지 해제
+        
+    }
     public void GameExit()  // 시작 화면 Scene으로 돌아가기
     {
-        
+        LoadingControllor.Instance.LoadScene("FirstScene");
     }
 
     public void GameEnd() // 게임을 종료하기

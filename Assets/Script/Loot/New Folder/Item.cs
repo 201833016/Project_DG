@@ -5,7 +5,8 @@ using UnityEngine;
 public enum ItemType
 {
     Equipment,
-    Consumables,
+    HP,
+    Portion,
     Etc
 }
 
@@ -22,4 +23,3 @@ public class Item
     }
 
 }
-

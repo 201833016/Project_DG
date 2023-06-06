@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 135543295379717639}
   - component: {fileID: 5511794783744114400}
   - component: {fileID: 3133464305653569994}
-  - component: {fileID: 375112971972051616}
   m_Layer: 7
   m_Name: Boss
   m_TagString: Boss
@@ -103,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHP: 5
   bossMaxhp: 5
+  symbolPrefab: {fileID: 6797825442585240410, guid: 11ae72555b10fea4f839368622558cb0,
+    type: 3}
 --- !u!58 &5511794783744114400
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,21 +141,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &375112971972051616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8769376531759103594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8713481e0a3b404a8eca60ed6e25a7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  droppedItemPrefab: {fileID: 9027580161145067170, guid: 60ad34e0c2ca7cc419098d0c5b609869,
-    type: 3}
-  lootList:
-  - {fileID: 11400000, guid: e90deb68f64ef504e926f55dece95cda, type: 2}
-  - {fileID: 11400000, guid: 71bd9b5c0f8e7fa4fa599405b5126864, type: 2}
-  - {fileID: 11400000, guid: 69315cf62faa09145a47047050589e52, type: 2}
