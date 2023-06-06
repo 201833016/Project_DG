@@ -1897,6 +1897,7 @@ GameObject:
   - component: {fileID: 8157818145149949745}
   - component: {fileID: 8157818145149949750}
   - component: {fileID: 8157818145149949751}
+  - component: {fileID: 5411911331267934192}
   m_Layer: 0
   m_Name: Destroyer
   m_TagString: SpawnPoint
@@ -1978,6 +1979,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6135259a9ef8fdf4f9e11a532ee063ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5411911331267934192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157818145149949749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7d3b0eb5fb1b346b41d53d566afb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openingDirection: 0
+  spawned: 0
+  playerVisible: 1
+  waitTime: 4
 --- !u!1 &8157818145732981421
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class ItemBoxOpen : MonoBehaviour
         {
             // 상자를 여는 애니메이션 실행을 위한 trigger 선언
             anim.SetBool("isOpen",true);
-            Invoke("DestroyBox", 2f);
+            Invoke("DestroyBox", 2f);   // 2초후 아이템 박스 파괴
         }
     }
 

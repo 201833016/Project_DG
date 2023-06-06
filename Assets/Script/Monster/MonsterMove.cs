@@ -6,13 +6,13 @@ public class MonsterMove : MonoBehaviour
 {
     
     Rigidbody2D rb;
-    Transform targetPlayer;
+    Transform targetPlayer; // 목표 Player 위치
 
     [Header("이동 속도")]
-    [SerializeField] [Range(1f, 4f)] float moveSpeed = 3f;  // 이동속도
+    [SerializeField] [Range(1f, 4f)] float moveSpeed = 3f;  // 몬스터 이동속도
 
     [Header("근접 거리")]
-    [SerializeField] [Range(0f, 3f)] float playerDistance = 1f;    // 인지거리
+    [SerializeField] [Range(0f, 3f)] float playerDistance = 1f;    // 몬스터의 Player의 거리
 
     public float monsterHP = 3f;
     public float monsterMaxhp = 3f;
@@ -35,13 +35,13 @@ public class MonsterMove : MonoBehaviour
 
     void FollowTarget()
     {
-        if(Vector2.Distance(transform.position, targetPlayer.position) > playerDistance && (follow = true))
+        if(Vector2.Distance(transform.position, targetPlayer.position) > playerDistance && (follow = true)) // Player와의 거리 > 좌표 1 차이
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPlayer.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPlayer.position, moveSpeed * Time.deltaTime);    // 몬스터 위치이동
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector2.zero; // 몬스터 멈춤
         }
     }
 
@@ -67,10 +67,10 @@ public class MonsterMove : MonoBehaviour
 
     private void Die()
     {    
-        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        GetComponent<LootBag>().InstantiateLoot(transform.position);    // 드랍 테이블에서 아이템 드롭
         Debug.Log("몬스터 처치");
-        Destroy(gameObject);
-        gameManager.MonsterScore(100);
+        Destroy(gameObject);    //  몬스터 처치후 파괴
+        gameManager.MonsterScore(100);  // 점수는 100점
     }
 
     

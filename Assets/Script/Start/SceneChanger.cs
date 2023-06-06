@@ -21,6 +21,7 @@ public class SceneChanger : MonoBehaviour
 
     public void GameOut()
     {
+        // 게임 프로그램 나가기
         Application.Quit();
     }
 }

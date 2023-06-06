@@ -18,7 +18,7 @@ public class MainCameraMove : MonoBehaviour
         cameraPosition.y = player.transform.position.y + offsetY; 
         cameraPosition.z = player.transform.position.z + offsetZ;   
 
-        transform.position = cameraPosition;
+        transform.position = cameraPosition;    // 카메라 좌표 = 목표 대상 위치
     }
     
 }

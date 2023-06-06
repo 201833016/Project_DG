@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
 {
     Inventory inven;
     public GameObject menuSet;  // ESC 서브 메뉴 여는 키
-    public GameObject invenPanel;   // 인벤토리
-    public Slot[] slots;
-    public Transform slotHolder;
+    public GameObject invenPanel;   // 인벤토리 UI
+    public Slot[] slots;    // 인벤토리용 배열 변수 선언
+    public Transform slotHolder;    // 인벤 갯수 증가 변수
 
 
    public int totalScore = 0;   // 총점수
@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
 
     void Start() 
     {
-        inven = Inventory.instance;
-        slots = slotHolder.GetComponentsInChildren<Slot>();
-        inven.onSlotCountChange += SlotChange;
+        inven = Inventory.instance; // 인벤토리 초기화
+        slots = slotHolder.GetComponentsInChildren<Slot>(); // 프리팹 Slot의 자식 오브젝트 가져오기
+        inven.onSlotCountChange += SlotChange;  // 참조할 SlotChange 메서드 정의
         inven.onchangeItem += RedrawSlotUI;
 
         menuSet.SetActive(false); 
@@ -38,15 +38,15 @@ public class GameManager : MonoBehaviour
 
     private void SlotChange(int val)
     {
-        for(int i = 0; i< slots.Length; i++)
+        for(int i = 0; i< slots.Length; i++)    // 초기 갯수 만큼만 활성화
         {
             if(i<inven.SlotCnt)
             {
-                slots[i].GetComponent<Button>().interactable = true;
+                slots[i].GetComponent<Button>().interactable = true;    // 설정 갯수 내는 활성화
             }
             else
             {
-                slots[i].GetComponent<Button>().interactable = false;
+                slots[i].GetComponent<Button>().interactable = false;   // 설정 갯수 외는 비활성화
             }
         }
     }
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // ESC
-        if(Input.GetButtonDown("Cancel"))
+        if(Input.GetButtonDown("Cancel"))   
         {
             // ESC키 입력시
             if(menuSet.activeSelf)
@@ -76,8 +76,8 @@ public class GameManager : MonoBehaviour
 
     public void GameStay()
     {
-        menuSet.SetActive(false);
-        invenPanel.SetActive(false);
+        menuSet.SetActive(false);       // 서브 메뉴 비활성화
+        invenPanel.SetActive(false);    // 인벤토리 비활성화
         Time.timeScale = 1f;    // 일시정지 해제
         
     }
@@ -91,12 +91,12 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void AddSlot()
+    public void AddSlot()   // 슬롯 증가
     {
         inven.SlotCnt++;
     }
 
-    void RedrawSlotUI()
+    void RedrawSlotUI() // 슬롯 초기화
     {
         for(int i = 0; i < slots.Length; i++)
         {
@@ -104,14 +104,14 @@ public class GameManager : MonoBehaviour
         }
         for(int i = 0; i < inven.items.Count; i++)
         {
-            slots[i].item = inven.items[i];
-            slots[i].UpdateSlotUI();
+            slots[i].item = inven.items[i]; // 아이템 갯수 만큼
+            slots[i].UpdateSlotUI();        // 슬롯 추가
         }
     }
 
     private void SetScoreText()
     {
-        text.text = "Score: " + playScore.ToString();
+        text.text = "Score: " + playScore.ToString();   // 현재 스코어 업데이트
     }
 
     public void PlayerHPDown(float damaged)   //Player 피격시
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         // 점수 표기 추가
     }
 
-    public void MonsterScore(int newScore)
+    public void MonsterScore(int newScore)  // 몬스터 처치시 점수 추가
     {
         playScore += newScore;
         SetScoreText();

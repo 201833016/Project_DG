@@ -5026,10 +5026,12 @@ MonoBehaviour:
   - {fileID: 8157818145732981421, guid: 4ca79f73bdd7a504fabc6ad88d286f6c, type: 3}
   - {fileID: 8157818145732981421, guid: cfd9e487c51b2cf48937e09e05d6d819, type: 3}
   - {fileID: 8157818145732981421, guid: 4a83e2c87e54ab44e88b62791b16b6c2, type: 3}
+  - {fileID: 8157818145732981421, guid: 4a83e2c87e54ab44e88b62791b16b6c2, type: 3}
   rightRooms:
   - {fileID: 8157818145732981421, guid: b9c2f89b16b3b014884e3487ef2dfa34, type: 3}
   - {fileID: 8157818145732981421, guid: 2af8ccaaeae805f4b8a4794a6e4d648d, type: 3}
   - {fileID: 8157818145732981421, guid: c51b6b1a0371f02478e714cdaa800ca5, type: 3}
+  - {fileID: 8157818145732981421, guid: 4a83e2c87e54ab44e88b62791b16b6c2, type: 3}
   - {fileID: 8157818145732981421, guid: 4a83e2c87e54ab44e88b62791b16b6c2, type: 3}
   closedRoom: {fileID: 7806351857991755979, guid: bdceb5fab85970940a8cd6a4355d0002,
     type: 3}

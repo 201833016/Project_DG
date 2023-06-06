@@ -10,8 +10,8 @@ public class Boss : MonoBehaviour
     public float bossMaxhp = 5f;
     GameManager gameManager;
 
-    public GameObject symbolPrefab;
-    Vector3 pos;
+    public GameObject symbolPrefab; // 보스 처치시 등장하는 신상 프리팹
+    Vector3 pos;    // 신상 위치
 
     private void Start() 
     {
@@ -44,7 +44,4 @@ public class Boss : MonoBehaviour
         Destroy(gameObject);
         gameManager.MonsterScore(1000);
     }
-    
-
-
 }

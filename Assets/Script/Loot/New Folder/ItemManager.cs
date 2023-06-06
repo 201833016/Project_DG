@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public static ItemManager instance;
+    public static ItemManager instance; // 다른 class에서 접근하기 위한 인스턴스
     
     private void Awake() {
         instance = this;
     }
-    public List<Item> itemDB = new List<Item>();
+    public List<Item> itemDB = new List<Item>();    // 아이템 종류 리스트
 
-    public GameObject dropItemPrefab;
+    public GameObject dropItemPrefab;   // 드롭 아이템 프리팹
 
     public void DropItemPos(Vector3 itemPosition)
     {
-        // 몬스터의 좌표를 가져옴, 몬스터 사망시
-        GameObject go = Instantiate(dropItemPrefab, itemPosition, Quaternion.identity);
-        go.GetComponent<DropItems>().SetItem(itemDB[Random.Range(0,3)]);
+        GameObject go = Instantiate(dropItemPrefab, itemPosition, Quaternion.identity); // 몬스터 사망시, 해당 좌표에 아이템 드롭
+        go.GetComponent<DropItems>().SetItem(itemDB[Random.Range(0,3)]);    // 아이템 3개중 랜덤으로 초기화
 
     }
 }

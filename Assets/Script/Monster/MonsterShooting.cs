@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MonsterShooting : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform bulletPos;
+    public GameObject bullet;   // 총알 오브젝트
+    public Transform bulletPos; // 총알 발사 위치
 
-    private float timer;
+    private float timer;    // 총알 발사 쿨타임
     private GameObject player;
     public float monsterHP = 3f;
     private GameManager gameManager;
@@ -19,12 +19,12 @@ public class MonsterShooting : MonoBehaviour
 
     private void Update() 
     {
-        float distance = Vector2.Distance(transform.position, player.transform.position);
+        float distance = Vector2.Distance(transform.position, player.transform.position);   // Player와 발사대의 거리  
 
-        if(distance < 15)
+        if(distance < 15)   
         {
             timer += Time.deltaTime;
-            if(timer > 2)
+            if(timer > 2)   // 총알 발사 쿨타임 2초
             {
                 timer = 0;
                 Shoot();
@@ -34,12 +34,12 @@ public class MonsterShooting : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(bullet, bulletPos.position, Quaternion.identity);
+        Instantiate(bullet, bulletPos.position, Quaternion.identity);   // 총알 clone생성 (이미지, 발사위치, 회전)
     }
 
     public void LongTakeDamaged(float damage)
     {
-        // 몬스터가 공격을 받을 시
+        // 원거리 몬스터가 공격을 받을 시
         monsterHP -= damage;
         if(monsterHP <= 0)
         {
@@ -49,9 +49,9 @@ public class MonsterShooting : MonoBehaviour
 
     private void Die()
     {
-        GetComponent<LootBag>().InstantiateLoot(transform.position);
-        Debug.Log("몬스터 처치");
-        Destroy(this.gameObject);
-        gameManager.MonsterScore(200);
+        GetComponent<LootBag>().InstantiateLoot(transform.position);    // 드랍 테이블에서 아이템 드롭
+        Debug.Log("원거리 몬스터 처치");
+        Destroy(this.gameObject);   //  몬스터 처치후 파괴
+        gameManager.MonsterScore(200);  // 점수는 200점
     }
 }

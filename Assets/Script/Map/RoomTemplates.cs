@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RoomTemplates : MonoBehaviour
 {
+    // 해당 위치로 연결 가능한 방 배열 변수 선언
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
     public GameObject[] leftRooms;
@@ -11,28 +12,22 @@ public class RoomTemplates : MonoBehaviour
 
     public GameObject closedRoom;
 
-    public List<GameObject> rooms;
+    public List<GameObject> rooms;  // 생성되는 Rooms의 리스트
 
     // 보스 몬스터 위치
-    public float waitTime;
-    private bool spawnedBoss;
+    public float waitTime;  // 보스 출현까지의 시간
+    private bool spawnedBoss;   // 보스 출현 여부
     public GameObject boss;
 
     void Update() 
     {
 
-        if(waitTime <= 0 && spawnedBoss == false)
+        if(waitTime <= 0 && spawnedBoss == false)   
         {
-            for(int i=0; i < rooms.Count; i++)
-            {
-                if(i == rooms.Count-1)
-                {
-                    Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
-                    spawnedBoss = true;
-                }
-            }
+            Instantiate(boss, rooms[rooms.Count -1].transform.position, Quaternion.identity);    // 보스 생성
+            spawnedBoss = true; // 보스 풀현 확인
         }
-        else
+        else    // 보스가 출현하지 않았으면
         {
             waitTime -= Time.deltaTime;
         }

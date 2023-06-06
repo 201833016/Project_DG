@@ -7,8 +7,8 @@ public class RoomSpawn : MonoBehaviour
     public int openingDirection;
     // 1 = 아래, 2 = 위, 3 = 좌측, 4 = 우측
 
-    private RoomTemplates templates;
-    private int rand;
+    private RoomTemplates templates;    // 방 연결 변수
+    private int rand;   // 랜덤을 위한 변수
     public bool spawned = false;
 
     public bool playerVisible = true;
@@ -18,7 +18,7 @@ public class RoomSpawn : MonoBehaviour
     {
         Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();   
-        Invoke("Spawn", 0.1f);
+        Invoke("Spawn", 0.1f);  // 0.1초 단위로 생성
     }
     void Spawn() 
     {
@@ -27,8 +27,8 @@ public class RoomSpawn : MonoBehaviour
             if(openingDirection == 1)
             {
                 // 아래 방 연결
-                rand = Random.Range(0, templates.bottomRooms.Length);
-                Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
+                rand = Random.Range(0, templates.bottomRooms.Length);   // 방연결이 가능한 배열 중 랜덤
+                Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);   // 방 생성
             }
             else if(openingDirection == 2)
             {
@@ -55,7 +55,7 @@ public class RoomSpawn : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.CompareTag("SpawnPoint"))
+        if(other.CompareTag("SpawnPoint"))  // Spawnpoint와 접촉시
         {
             if(other.GetComponent<RoomSpawn>().spawned == false && spawned == false)
             {

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DropItems : MonoBehaviour
 {
-    public Item item;
-    public SpriteRenderer image;
+    public Item item;   // 아이템 개체
+    public SpriteRenderer image;    // 아이템 이미지
 
 
-    public void SetItem(Item _item)
+    public void SetItem(Item _item) // 아이템 정보, 획득 아이템 정보로 초기화
     {
         item.itemName = _item.itemName;
         item.itemImage = _item.itemImage;
@@ -19,12 +19,12 @@ public class DropItems : MonoBehaviour
 
 
 
-    public Item GetItem()
+    public Item GetItem()   // 아이템 획득 메서드
     {
         return item;
     }
 
-    public void DestroyItem()
+    public void DestroyItem()   // 필드의 아이템 파괴 메서드 
     {
         Destroy(gameObject);
     }
