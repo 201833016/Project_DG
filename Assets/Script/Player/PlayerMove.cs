@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour
     private Vector2 speedVec;
 
     [Header("맵 넘어갈 이미지")] public Image Panel;
-    [Header("맵 이동 좌표")] public GameObject mapSpr;  // 카메라 lerp용 실험
+    [Header("맵 이동 좌표")] public GameObject mapSpr;  // 카메라 lerp용
 
     //float time = 0f;
     //float FadeTime = 1f;
@@ -83,6 +83,9 @@ public class PlayerMove : MonoBehaviour
 
             mapSpr.GetComponent<Move>().RightMap();
         }
+
+
+    
     }
 
 /*

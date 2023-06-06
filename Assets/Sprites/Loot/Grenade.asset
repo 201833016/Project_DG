@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loopSprite: {fileID: 21300000, guid: 92fa04956b95dfd419b4c0292e8f6c7d, type: 3}
   lootName: Grenade
-  dropChance: 10
+  dropChance: 70

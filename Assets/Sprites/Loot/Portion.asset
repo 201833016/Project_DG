@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loopSprite: {fileID: 21300000, guid: 49493c30273482346a81afb4ec8e805f, type: 3}
   lootName: Portion
-  dropChance: 40
+  dropChance: 60

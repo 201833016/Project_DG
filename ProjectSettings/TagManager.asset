@@ -17,6 +17,7 @@ TagManager:
   - Wall
   - FarEnemy
   - Boss
+  - Dropitem
   layers:
   - Default
   - TransparentFX

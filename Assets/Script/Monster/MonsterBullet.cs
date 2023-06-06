@@ -7,6 +7,7 @@ public class MonsterBullet : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rigid;
 
+
     public float force;
     private float timer;
 
@@ -25,7 +26,7 @@ public class MonsterBullet : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 10)
+        if(timer > 5)
         {
             Destroy(gameObject);
         }
@@ -42,6 +43,11 @@ public class MonsterBullet : MonoBehaviour
         else if(other.CompareTag("Wall"))
         {
             Destroy(gameObject);
-        }  
+        }
+        if(other.CompareTag("SpawnPoint"))
+        {
+            Debug.Log("SpawnPoint의 Destroy에 맞음.");
+
+        }
     }
 }

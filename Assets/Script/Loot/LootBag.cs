@@ -6,8 +6,13 @@ public class LootBag : MonoBehaviour
 {
     public GameObject droppedItemPrefab;
     public List<Loot> lootList = new List<Loot>();  
+
     
-    
+    private void Start() 
+    {
+        
+    }
+
     Loot GetDroppedItem()
     {
         int randomnum = Random.Range(1, 101);   // 1 - 100
@@ -34,12 +39,15 @@ public class LootBag : MonoBehaviour
         Loot droppedItem = GetDroppedItem();
         if(droppedItem != null)
         {
-            GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
-            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.loopSprite;
+            //GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
+            //lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.loopSprite;
 
-            float dropForce = 300f;
-            Vector2 dropDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-            lootGameObject.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropForce, ForceMode2D.Impulse);
+            ItemManager.instance.DropItemPos(spawnPosition);
+
+            //float dropForce = 300f;
+            //Vector2 dropDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            //lootGameObject.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropForce, ForceMode2D.Impulse);
+
         }
     }
 }

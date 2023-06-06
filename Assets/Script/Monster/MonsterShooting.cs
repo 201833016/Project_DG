@@ -21,7 +21,7 @@ public class MonsterShooting : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if(distance < 12)
+        if(distance < 15)
         {
             timer += Time.deltaTime;
             if(timer > 2)
